@@ -1,21 +1,25 @@
 <template>
 	<section class="hotels-list-header">
-      <div 
+		Sort By :
+      <button 
       	v-for="(value,key) in sortableKeys"
       	v-bind:class="[
 	      		key,
-	      		{'hotel-list-header-item--asc' : value.ascending && activeSort === key},
-	      		{'hotel-list-header-item--dec' : !value.ascending  && activeSort === key},
-	      		'hotel-list-header-item'
+	      		{'hotels-list-header-item--asc' : value.ascending && activeSort === key},
+	      		{'hotels-list-header-item--dec' : !value.ascending  && activeSort === key},
+	      		'hotels-list-header-item'
       		]
       		"
       	@click="isSortable(key) ? setCurrentSort(key) : null" >
       		{{key}}
-    	</div>
+    	</button>
     </section>
 </template>
 
 <script>   
+// load the scss file for the item
+import '../scss/header.scss'
+
 export default {
   name: 'hotels-list-header',
   data () {
@@ -68,7 +72,7 @@ export default {
 			if(typeof currentSortObject.example === 'number'){
 				// number sorting
 				items.sort(function (a,b) {
-					return currentSortObject.ascending ? a[key] - b[key] : b[key] - a[key];
+					return currentSortObject.ascending ?  b[key] - a[key] :  a[key] - b[key];
 	  		});
 			}else{
 				// string sorting
@@ -80,7 +84,7 @@ export default {
 				    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
 				});
 				// reverse the list in case 
-				currentSortObject.ascending ? items : items.sort().reverse(); 
+				currentSortObject.ascending ? items.sort().reverse() : items; 
 			}
 			//setting the opposite of the current order direction (ascending | descending)
   		currentSortObject.ascending = !currentSortObject.ascending;
