@@ -10,7 +10,7 @@
 	      		'hotels-list-header-item'
       		]
       		"
-      	@click="isSortable(key) ? setCurrentSort(key) : null" >
+      	 @click="isSortable(key) ? setCurrentSort(key) : null">
       		{{key}}
     	</button>
     </section>

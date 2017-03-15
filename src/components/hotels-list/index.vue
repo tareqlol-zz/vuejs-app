@@ -3,8 +3,8 @@
     <section is="hotels-list-header"></section>
     <section is="hotels-list-item" v-bind:hotelList="hotelList"></section>
 
-    <section class="error" v-if="fetchError">
-      There was an error with the request!
+    <section class="hotel-list-error" v-if="fetchError">
+      <p>There was an error with the request!</p>
       <button @click="fetchData">Reload</button>
     </section>
   </section>
@@ -58,5 +58,12 @@ export default {
   .hotel-list{
     width: 90%;
     margin: 0 auto;
+    &-error{
+      color:white;
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 20px;
+    }
   }
 </style>
