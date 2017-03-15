@@ -3,7 +3,7 @@
     <section is="hotels-list-header"></section>
     <section is="hotels-list-item" v-bind:hotelList="hotelList"></section>
 
-    <section v-if="fetchError">
+    <section class="error" v-if="fetchError">
       There was an error with the request!
       <button @click="fetchData">Reload</button>
     </section>
@@ -53,3 +53,10 @@ export default {
   components : { hotelsListItem , hotelsListHeader }
 }
 </script>
+
+<style lang="scss">
+  .hotel-list{
+    width: 90%;
+    margin: 0 auto;
+  }
+</style>

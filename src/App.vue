@@ -1,19 +1,29 @@
+
+<!-- App Level Template -->
+
 <template>
   <div id="app">
-    {{msg}}
+    <h1 class="page-header">Welcome to Vue.js Hotel List</h1>
     <section is="hotels-list"></section>
   </div>
 </template>
 
+<!-- ENDOF App Level Template -->
+
+
+
+<!-- App Level Script -->
+
 <script>
-// Import the hotel list component
-import hotelsList from './components/hotels-list/index.vue';
+//import the scss files
+import './components/scss/app.scss'
+// import Hotels List Component
+import hotelsList from './components/hotels-list/index.vue'
 
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Vue.js Hotel List'
     }
   },
   // setting App Level Components
@@ -21,6 +31,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-
-</style>
+<!-- ENDOF App Level Script -->
