@@ -1,6 +1,8 @@
 <template>
   <section class="hotel-list" v-bind:class="{ 'loading' : fetching }">
-    <section is="hotel-item" v-for="hotel in hotelList" v-bind:hotel="hotel"></section>
+    <section is="hotels-list-header"></section>
+    <section is="hotels-list-item" v-bind:hotelList="hotelList"></section>
+
     <section v-if="fetchError">
       There was an error with the request!
       <button @click="fetchData">Reload</button>
@@ -9,13 +11,14 @@
 </template>
 
 <script>
-import hotelItem from './item.vue'
+import hotelsListHeader from './header.vue'
+import hotelsListItem from './item.vue'
 
 // API url 
 const serviceUrl = 'https://api.beach-inspector.com/'
 
 export default {
-  name: 'hotel-list',
+  name: 'hotels-list',
   data () {
     return {
       hotelList : [],
@@ -46,7 +49,7 @@ export default {
   created () {
     this.fetchData()
   },
-  // define the hotelItem child component 
-  components : { hotelItem }
+  // define the hotelsListItem, and hotelsListHeader as children components
+  components : { hotelsListItem , hotelsListHeader }
 }
 </script>
