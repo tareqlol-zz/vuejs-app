@@ -11,47 +11,47 @@
 </template>
 
 <script>
-import hotelsListHeader from './header.vue'
-import hotelsListItem from './item.vue'
+import hotelsListHeader from './header';
+import hotelsListItem from './item';
 
-// API url 
-const serviceUrl = 'https://api.beach-inspector.com/'
+// API url
+const serviceUrl = 'https://api.beach-inspector.com/';
 
 export default {
   name: 'hotels-list',
-  data () {
+  data() {
     return {
-      hotelList : [],
-      fetchError : false
-    }
+      hotelList: [],
+      fetchError: false,
+    };
   },
-  methods : {
+  methods: {
     // define a fetch data that is used
     // on created event or from the view
     // if there are an error
-    fetchData (){
+    fetchData() {
       this.fetching = true;
       // fetch the hotel list using vue-resource
-      this.$http.get(serviceUrl).then(response => {
+      this.$http.get(serviceUrl).then((response) => {
         // get body data
-        if(response.body && response.body.length){
+        if (response.body && response.body.length) {
           this.hotelList = response.body;
-        }else{
+        } else {
           this.fetchError = true;
         }
         // remove the loading
         this.fetching = false;
-      }, response => {
-          this.fetchError = true;
+      }, () => {
+        this.fetchError = true;
       });
-    }
+    },
   },
-  created () {
-    this.fetchData()
+  created() {
+    this.fetchData();
   },
   // define the hotelsListItem, and hotelsListHeader as children components
-  components : { hotelsListItem , hotelsListHeader }
-}
+  components: { hotelsListItem, hotelsListHeader },
+};
 </script>
 
 <style lang="scss">

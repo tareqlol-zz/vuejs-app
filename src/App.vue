@@ -15,20 +15,20 @@
 <!-- App Level Script -->
 
 <script>
-//import the scss files
-import './components/scss/app.scss'
+// import the scss files
+import './components/scss/app.scss';
 // import Hotels List Component
-import hotelsList from './components/hotels-list/index.vue'
+import hotelsList from './components/hotels-list/index';
 
 export default {
   name: 'app',
-  data () {
+  data() {
     return {
-    }
+    };
   },
   // setting App Level Components
-  components : { hotelsList }
-}
+  components: { hotelsList },
+};
 </script>
 
 <!-- ENDOF App Level Script -->
