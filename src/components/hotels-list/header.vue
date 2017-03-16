@@ -93,7 +93,7 @@ export default {
         });
         // reverse the list in case
         if (currentSortObject.ascending) {
-          return items.sort().reverse();
+          items.sort().reverse();
         }
       }
       // setting the opposite of the current order direction (ascending | descending)

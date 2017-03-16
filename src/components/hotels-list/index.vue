@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import hotelsListHeader from './header';
-import hotelsListItem from './item';
+import hotelsListHeader from './header.vue';
+import hotelsListItem from './item.vue';
 
 // API url
 const serviceUrl = 'https://api.beach-inspector.com/';

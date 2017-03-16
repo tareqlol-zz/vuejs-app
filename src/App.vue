@@ -18,7 +18,7 @@
 // import the scss files
 import './components/scss/app.scss';
 // import Hotels List Component
-import hotelsList from './components/hotels-list/index';
+import hotelsList from './components/hotels-list/index.vue';
 
 export default {
   name: 'app',
