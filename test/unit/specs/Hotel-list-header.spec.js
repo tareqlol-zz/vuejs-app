@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import hotelsListHeader from '@/components/hotels-list/header';
+import hotelsListHeader from '@/components/hotels-list/header.vue';
 
 describe('hotelsListHeader.vue', () => {
   it('Should render contents ', () => {

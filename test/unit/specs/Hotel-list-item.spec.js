@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import hotelsListItem from '@/components/hotels-list/item';
+import hotelsListItem from '@/components/hotels-list/item.vue';
 
 describe('hotelsListItem.vue', () => {
   it('Should render contents ', () => {
