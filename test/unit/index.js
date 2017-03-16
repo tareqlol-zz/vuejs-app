@@ -1,6 +1,12 @@
 import Vue from 'vue'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+
+// vue resource
+import vueResource from 'vue-resource/dist/vue-resource.min.js'
+
+// using $http resource 
+Vue.use(vueResource)
 
 // Polyfill fn.bind() for PhantomJS
 /* eslint-disable no-extend-native */
